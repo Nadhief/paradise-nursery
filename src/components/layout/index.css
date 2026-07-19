@@ -1,0 +1,142 @@
+/* Base Navbar styling - DARK MODE */
+/* Ubah bagian pembungkus luar Navbar */
+.navbar {
+  /* Ubah menjadi fixed agar benar-benar menimpa konten di bawahnya */
+  position: fixed;
+  left: 50%;
+  transform: translateX(
+    -50%
+  ); /* Trik agar posisi fixed bisa otomatis ke tengah */
+  z-index: 100;
+
+  /* width: calc(100% - 4rem);  */
+  width: 1280px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 1.2rem 2rem;  */
+
+  /* Efek Liquid Glassmorphism */
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(11, 19, 14, 0.65),
+    rgba(25, 40, 30, 0.45)
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.container {
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Brand / Logo */
+.navbar__brand h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff; /* Putih bersih */
+  letter-spacing: -0.5px;
+}
+
+/* Menu Container */
+.navbar__menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Link Menu */
+.navbar__link {
+  text-decoration: none;
+  color: #a3b899; /* Hijau sage abu-abu soft (gampang dibaca di dark mode) */
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.navbar__link:hover {
+  color: #ffffff; /* Menyala putih saat di-hover */
+}
+
+/* Animasi Garis Bawah Pas Hover & Active */
+.navbar__link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #588157; /* Hijau daun terang sebagai aksen aktif */
+  transition: width 0.3s ease;
+}
+
+.navbar__link:hover::after {
+  width: 100%;
+}
+
+/* State Link Aktif */
+.navbar__link.active {
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(88, 129, 87, 0.3); /* Efek glow tipis pada teks */
+}
+
+.navbar__link.active::after {
+  width: 100%;
+  background-color: #72a276; /* Warna garis lebih terang saat aktif */
+}
+
+
+.navbar__cart {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navbar__badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 18px;
+  height: 18px;
+
+  padding: 0 4px;
+
+  border-radius: 999px;
+
+  background-color: #ef4444;
+  color: #ffffff;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* Responsive Navbar untuk HP */
+@media (max-width: 640px) {
+  .navbar {
+    width: calc(100% - 2rem);
+    padding: 1rem 1.2rem;
+  }
+}

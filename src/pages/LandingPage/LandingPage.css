@@ -1,0 +1,84 @@
+.landing-page {
+  min-height: 100vh;
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.45)
+  ), url('../../assets/images/hero.jpg');
+  
+}
+
+.landing-page .container {
+  width: 100%;
+  max-width: 1280px;
+
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.landing-page__content {
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  color: #ffffff;
+}
+
+.landing-page__title {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.landing-page__description {
+  font-size: 1.125rem;
+  line-height: 1.8; 
+}
+
+.landing-page__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+
+  padding: 14px 28px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #2e7d32;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition: background-color 0.25s ease;
+}
+
+.landing-page__button:hover {
+  background-color: #1b5e20;
+}
+
+@media (max-width: 768px) {
+  .landing-page__content {
+    max-width: 100%;
+  }
+
+  .landing-page__title {
+    font-size: 3rem;
+  }
+
+  .landing-page__description {
+    font-size: 1rem;
+  }
+}

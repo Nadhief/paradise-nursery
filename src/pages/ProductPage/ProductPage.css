@@ -1,0 +1,166 @@
+/* ===========================
+   Product Page
+=========================== */
+
+.product-page .container {
+  display: flex;
+  flex-flow: column;
+  gap: 56px;
+
+  /* width: 100%; */
+  width: 1280px;
+  margin: 0 auto;
+  padding: 100px 0 0 0;
+}
+
+/* ===========================
+   Header
+=========================== */
+
+.product-page__header {
+  /* margin-bottom: 56px; */
+  text-align: center;
+}
+
+.product-page__header h1 {
+  margin-bottom: 12px;
+
+  font-size: 2.5rem;
+  font-weight: 700;
+
+  color: white;
+}
+
+/* ===========================
+   Category
+=========================== */
+
+.product-page__category {
+  margin-bottom: 56px;
+}
+
+.product-page__category:last-child {
+  margin-bottom: 0;
+}
+
+.product-page__category-title {
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  color: #2e7d32;
+
+  border-bottom: 2px solid #e5e7eb;
+}
+
+/* ===========================
+   Grid
+=========================== */
+
+.product-page__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+/* ===========================
+   Product Card
+=========================== */
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  height: 100%;
+
+  background: #ffffff;
+  border-radius: 12px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+  transition: transform 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+.product-card__image {
+  width: 300px;
+  height: 340px;
+
+  overflow: hidden;
+}
+
+.product-card__image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.product-card__content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 20px;
+}
+
+.product-card__content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  color: #1f2937;
+}
+
+.product-card__price {
+  font-size: 1.125rem;
+  font-weight: 700;
+
+  color: #2e7d32;
+}
+
+.product-card__button {
+  width: 100%;
+
+  margin-top: auto;
+
+  padding: 12px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #2e7d32;
+
+  color: #ffffff;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background-color 0.25s ease;
+}
+
+.product-card__button:hover {
+  background: #1b5e20;
+}
+
+.product-card__button:disabled {
+  cursor: not-allowed;
+
+  background: #9ca3af;
+}
+
+@media (max-width: 768px) {
+  .product-page__grid {
+    grid-template-columns: 1fr;
+  }
+}
