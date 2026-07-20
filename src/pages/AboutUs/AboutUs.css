@@ -1,0 +1,43 @@
+.about-us {
+  padding: 120px 0 60px;
+}
+
+.about-us .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about-us__header {
+  text-align: center;
+}
+
+.about-us__header h1 {
+  margin-bottom: 16px;
+
+  font-size: 2.5rem;
+  font-weight: 700;
+
+  color: #2e7d32;
+}
+
+.about-us__header p {
+  color: #666;
+  line-height: 1.8;
+}
+
+.about-us__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-us__content p {
+  color: #444;
+  line-height: 1.9;
+  text-align: justify;
+}

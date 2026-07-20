@@ -11,6 +11,10 @@ export const publicMenus = [
     label: 'Cart',
     path: '/cart',
   },
+  {
+    label: 'AboutUs',
+    path: '/aboutus',
+  },
 ]
 
 export const privateMenus = [

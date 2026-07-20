@@ -1,21 +1,24 @@
 // src/pages/routes/PublicRoutes.jsx
 
-import ProductPage from '../ProductPage'
-import CartPage from '../CartPage'
-import LandingPage from '../LandingPage'
+import ProductPage from "../ProductPage";
+import CartPage from "../CartPage";
+import LandingPage from "../LandingPage";
+import AboutUs from "../AboutUs";
 
 const publicRoutes = [
-  {path: '/',
-    element: <LandingPage />
-  },
+  { path: "/", element: <LandingPage /> },
   {
-    path: '/products',
+    path: "/products",
     element: <ProductPage />,
   },
   {
-    path: '/cart',
+    path: "/cart",
     element: <CartPage />,
   },
-]
+  {
+    path: "/aboutus",
+    element: <AboutUs />,
+  },
+];
 
-export default publicRoutes
+export default publicRoutes;
