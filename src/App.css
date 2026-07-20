@@ -182,3 +182,22 @@
     border-right-color: var(--border);
   }
 }
+
+/* implementing background image for paradise nursery landing page */
+
+.landing-page {
+  min-height: 100vh;
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.45)
+  ), url('../../assets/images/hero.jpg');
+  
+}
