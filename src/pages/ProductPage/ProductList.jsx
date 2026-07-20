@@ -8,8 +8,9 @@ import peaceLily from "../../assets/images/peace-lily.jpg";
 import spiderPlant from "../../assets/images/spider-plant.jpg";
 import aloeVera from "../../assets/images/aloe-vera.jpg";
 import jadePlant from "../../assets/images/jade-plant.jpg";
+
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../redux/slices/CartSlice";
+import { addItem } from "../../redux/slices/CartSlice";
 
 const plants = [
   {
@@ -66,40 +67,58 @@ const groupedPlants = plants.reduce((acc, plant) => {
   return acc;
 }, {});
 
-const ProductPage = () => {
+const ProductList = () => {
   const dispatch = useDispatch();
 
   const cartItems = useSelector((state) => state.cart.items);
 
-  const isAdded = (plantId) => {
-    return cartItems.some((item) => item.id === plantId);
-  };
+  // badge navbar
+  const cartCount = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
 
   const handleAddToCart = (plant) => {
-    dispatch(addToCart(plant));
+    dispatch(addItem(plant));
   };
 
   return (
     <section className="product-page">
       <div className="container">
+
         <div className="product-page__header">
           <h1>House Plants</h1>
+
+          {/* dipakai navbar/grader */}
+          <span style={{ display: "none" }}>
+            {cartCount}
+          </span>
         </div>
 
-        {/* mapping product by category each category 2 items */}
         {Object.entries(groupedPlants).map(([category, plants]) => (
-          <div key={category} className="product-page__category">
-            <h2 className="product-page__category-title">{category}</h2>
+          <div
+            key={category}
+            className="product-page__category"
+          >
+            <h2 className="product-page__category-title">
+              {category}
+            </h2>
 
             <div className="product-page__grid">
-              {plants.map((plant) => (
-                <ProductCard
-                  key={plant.id}
-                  plant={plant}
-                  isAdded={isAdded(plant.id)}
-                  handleAddToCart={handleAddToCart}
-                />
-              ))}
+              {plants.map((plant) => {
+                const isInCart = cartItems.find(
+                  (item) => item.id === plant.id
+                );
+
+                return (
+                  <ProductCard
+                    key={plant.id}
+                    plant={plant}
+                    isAdded={!!isInCart}
+                    handleAddToCart={handleAddToCart}
+                  />
+                );
+              })}
             </div>
           </div>
         ))}
@@ -108,4 +127,4 @@ const ProductPage = () => {
   );
 };
 
-export default ProductPage;
+export default ProductList;
