@@ -9,7 +9,7 @@ import spiderPlant from "../../assets/images/spider-plant.jpg";
 import aloeVera from "../../assets/images/aloe-vera.jpg";
 import jadePlant from "../../assets/images/jade-plant.jpg";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../redux/slices/cartSlice";
+import { addToCart } from "../../redux/slices/CartSlice";
 
 const plants = [
   {
@@ -86,7 +86,7 @@ const ProductPage = () => {
           <h1>House Plants</h1>
         </div>
 
-        {/* mapping product by category */}
+        {/* mapping product by category each category 2 items */}
         {Object.entries(groupedPlants).map(([category, plants]) => (
           <div key={category} className="product-page__category">
             <h2 className="product-page__category-title">{category}</h2>

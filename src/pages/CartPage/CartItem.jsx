@@ -4,7 +4,7 @@ import {
   addToCart,
   decreaseQuantity,
   removeFromCart,
-} from "../../redux/slices/cartSlice";
+} from "../../redux/slices/CartSlice";
 
 import "./CartPage.css";
 
